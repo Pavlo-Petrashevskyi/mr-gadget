@@ -1,9 +1,13 @@
-import { createRoot } from 'react-dom/client';
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable react/no-deprecated */
+import ReactDOM from 'react-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
-import 'bulma/css/bulma.css';
-import '@fortawesome/fontawesome-free/css/all.css';
-import './index.scss';
+import App from './App';
 
-import { App } from './App';
-
-createRoot(document.getElementById('root') as HTMLDivElement).render(<App />);
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById('root'),
+);
