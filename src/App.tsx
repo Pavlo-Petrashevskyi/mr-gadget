@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -19,9 +20,7 @@ const App = () => {
     document.documentElement.scrollTop = 0;
   };
 
-  const addParam = (
-    newParams: NewParamsProps = {},
-  ) => {
+  const addParam = (newParams: NewParamsProps = {}) => {
     const newParam = new URLSearchParams(searchParams);
 
     for (const [key, value] of Object.entries(newParams)) {
@@ -69,25 +68,16 @@ const App = () => {
               Github
             </a>
 
-            <a
-              href="/"
-              className="footer__link"
-            >
+            <a href="/" className="footer__link">
               Contacts
             </a>
 
-            <a
-              href="/"
-              className="footer__link"
-            >
+            <a href="/" className="footer__link">
               Rights
             </a>
           </div>
 
-          <div
-            className="footer__button"
-            onClick={() => GetToTop()}
-          />
+          <div className="footer__button" onClick={() => GetToTop()} />
         </div>
       </footer>
     </div>
