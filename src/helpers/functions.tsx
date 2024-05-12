@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // eslint-disable-next-line @typescript-eslint/ban-types
 export function debounce(callback: Function, delay: number) {
   let timerId = 0;

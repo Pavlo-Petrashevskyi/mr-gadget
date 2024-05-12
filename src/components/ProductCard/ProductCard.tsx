@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import classNames from 'classnames';
@@ -63,8 +64,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         ? saveItemToCart(itemId, productDetails)
         : deleteItemFromCart(itemId);
     }
-
-    return cart;
   }, [isSelectedToCard]);
 
   useEffect(() => {
@@ -77,8 +76,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         ? saveItemToFav(product)
         : deleteItemFromFav(product);
     }
-
-    return fav;
   }, [isSelectedToFav]);
 
   useEffect(() => {
