@@ -72,12 +72,14 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
         : deleteItemFromCart(productId);
     }
 
-    return cart;
+    return () => {
+      return cart;
+    };
   }, [isSelectedToCard, productId]);
 
   useEffect(() => {
     setCartLength(cartSum(cart));
-  }, [cart.length]);
+  }, [cart]);
 
   useEffect(() => {
     if (isSelectedToFav !== findItemInFav(productId) && product) {
@@ -86,7 +88,9 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
         : deleteItemFromFav(product);
     }
 
-    return fav;
+    return () => {
+      return fav;
+    };
   }, [isSelectedToFav]);
 
   useEffect(() => {

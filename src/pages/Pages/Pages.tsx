@@ -101,7 +101,7 @@ export const Pages: React.FC<PagesProps> = ({
           />
         </Route>
         <Route
-          path="/favorites"
+          path="/favourites"
           element={
             <>
               <FavoritesPage
