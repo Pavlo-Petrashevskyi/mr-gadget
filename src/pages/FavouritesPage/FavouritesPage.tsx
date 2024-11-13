@@ -1,11 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Breadcrumbs } from '../../components/Breadcrubs';
 import { StorageContext } from '../../components/StorageContext';
 import { ProductList } from '../../components/ProductList';
 import { Product } from '../../types/Product';
-import { NoSearchResults } from '../../components/NoSearchResults';
 
 type FavoritesPageProps = {
   setFavLength: React.Dispatch<number>;
@@ -41,19 +40,21 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = ({
     <div className="fav-page">
       <Breadcrumbs />
 
-      <div className="fav-page__title">Favourites</div>
-
-      <div className="fav-page__quantity">{`${fav.length} items`}</div>
-
       {newFav.length > 0 ? (
-        <ProductList
-          products={newFav}
-          isNormal
-          setFavLength={setFavLength}
-          setCartLength={setCartLength}
-        />
+        <React.Fragment>
+          <div className="fav-page__title">Favourites</div>
+
+          <div className="fav-page__quantity">{`${fav.length} items`}</div>
+
+          <ProductList
+            products={newFav}
+            isNormal
+            setFavLength={setFavLength}
+            setCartLength={setCartLength}
+          />
+        </React.Fragment>
       ) : (
-        <NoSearchResults />
+        <div className="fav-page__empty-page">Your favourites are empty</div>
       )}
     </div>
   );
